@@ -53,6 +53,10 @@ header {
     padding: 6px;
     font-size: 2rem;
 }
+.menu ul li:hover{
+    transform: scale(1.1);
+}
+
 /* CONTENIDO PRINCIPAL */
 .main {
     display: flex;
