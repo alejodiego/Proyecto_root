@@ -35,8 +35,8 @@ header {
     justify-content: space-between;
 }
 .logo {
-    width: 200px;
-    height: 200px;
+    width: 7vw;
+    height: auto;
     margin-left: 3%;
 }
 .menu {
