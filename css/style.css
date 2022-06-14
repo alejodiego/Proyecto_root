@@ -1,0 +1,188 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+body {
+    width: 100%;
+    height: 100%;
+}
+/*GRID*/
+#grilla {
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "main main"
+        "footer footer";
+    grid-template-rows: 20vh 75vh 5vh;
+    grid-template-columns: 50% 50%;
+}
+header {
+    grid-area: header;
+}
+main {
+    grid-area: main;
+}
+footer {
+    grid-area: footer;
+}
+/* ENCABEZADO */
+header {
+    margin: 2px;
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo {
+    width: 200px;
+    height: 200px;
+    margin-left: 3%;
+}
+.menu {
+    background-color: rgb(3, 3, 3);
+    color: rgb(254, 254, 254);
+    text-align: center;
+    margin-right: 5%;
+}
+.menu ul li {
+    display: inline-block;
+}
+.menu ul li a {
+    color: white;
+    padding: 6px;
+    font-size: 2rem;
+}
+/* CONTENIDO PRINCIPAL */
+.main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+/*quienes somos*/
+article {
+    width: 50%;
+    padding: 2%;
+}
+article .imagen_principal {
+    width: 100%;
+    border-radius: 5%;
+}
+.nosotros {
+    width: 50%;
+    padding: 2%;
+
+}
+.nosotros p {
+    text-align: center;
+    border: solid 2px black;
+    font-size: 2vw;
+    height: 100%;
+}
+
+/* GALERIA*/
+.galeria{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.galeria img{
+    max-width: 25vw;
+    padding: 1%;
+}
+
+/*novedades*/
+.noticia {
+    border: solid 2px black;
+    margin-top: 3px;
+}
+
+/*talleres amigos*/
+.tarjeta {
+    margin: 3px;
+    background-color: rgb(53, 53, 53);
+    width: 150px;
+    height: auto;
+    text-align: center;
+    border-radius: 3%;
+    display: inline-block;
+}
+
+.tarjeta__imagen {
+    width: 100%;
+}
+
+.tarjeta__titulo {
+    color: red;
+}
+
+.tarjeta__contenido {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+}
+
+/*contacto*/
+.formulario {
+    height: 100%;
+    border: solid 2px black;
+    border-radius: 2%;
+}
+
+label {
+    font-family: monospace;
+    margin-left: 2px;
+}
+
+textarea {
+    width: 99.9%;
+}
+
+/* PIE DE PAGINA */
+.pie {
+    background-color: rgb(243, 103, 103);
+    margin: 2px;
+    color: white;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.pie p{
+    font-size: 1.5vw;
+}
+.pie ul{
+    margin-right: 10px;
+}
+.pie ul li {
+    display: inline-block;
+    
+}
+.pie ul li a{
+    font-size: 2vw;
+
+}
+
+@media screen and (max-width: 785px) {
+    body{
+        background-color: brown;
+    }
+    header {
+        flex-direction: column;
+        width: 100%;
+    }
+    .logo {
+        width: 100px;
+        height: 100px;
+    }
+    .main {
+        flex-direction: column;
+        width: 100%;
+    }
+    main .nosotros p{
+        font-size: 2vw;
+    } 
+}
