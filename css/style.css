@@ -2,10 +2,12 @@
     padding: 0px;
     margin: 0px;
 }
+
 body {
     width: 100%;
     height: 100%;
 }
+
 /*GRID*/
 #grilla {
     display: grid;
@@ -16,15 +18,19 @@ body {
     grid-template-rows: 20vh 75vh 5vh;
     grid-template-columns: 50% 50%;
 }
+
 header {
     grid-area: header;
 }
+
 main {
     grid-area: main;
 }
+
 footer {
     grid-area: footer;
 }
+
 /* ENCABEZADO */
 header {
     margin: 2px;
@@ -34,26 +40,31 @@ header {
     align-items: center;
     justify-content: space-between;
 }
+
 .logo {
     width: 7vw;
     height: auto;
     margin-left: 3%;
 }
+
 .menu {
     background-color: rgb(3, 3, 3);
     color: rgb(254, 254, 254);
     text-align: center;
     margin-right: 5%;
 }
+
 .menu ul li {
     display: inline-block;
 }
+
 .menu ul li a {
     color: white;
     padding: 6px;
-    font-size: 2rem;
+    font-size: 1rem;
 }
-.menu ul li:hover{
+
+.menu ul li:hover {
     transform: scale(1.1);
 }
 
@@ -65,128 +76,184 @@ header {
     width: 100%;
     height: 100%;
 }
+
+.dropdown {
+    display: none;
+}
+
 /*quienes somos*/
 article {
     width: 50%;
     padding: 2%;
 }
+
 article .imagen_principal {
     width: 100%;
     border-radius: 5%;
 }
+
 .nosotros {
     width: 50%;
     padding: 2%;
-
 }
+
 .nosotros p {
     text-align: center;
     border: solid 2px black;
-    font-size: 2vw;
+    font-size: 1.5vw;
     height: 100%;
 }
 
 /* GALERIA*/
-.galeria{
+.galeria {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
 }
-.galeria img{
-    max-width: 25vw;
+
+.galeria img {
+    max-width: 200px;
     padding: 1%;
 }
 
 /*novedades*/
 .noticia {
+    display: flex;
+    flex-direction: row;
     border: solid 2px black;
     margin-top: 3px;
 }
 
+.noticia img {
+    width: 10vw;
+    height: 10vw;
+}
+
+.noticia p {
+    font-size: 1.5vw;
+}
+
 /*talleres amigos*/
-.tarjeta {
-    margin: 3px;
-    background-color: rgb(53, 53, 53);
-    width: 150px;
-    height: auto;
-    text-align: center;
-    border-radius: 3%;
-    display: inline-block;
-}
-
-.tarjeta__imagen {
+.main_talleres {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
     width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
 }
 
-.tarjeta__titulo {
-    color: red;
+.card {
+    margin: 1%;
+    text-align: center;
+    width: 20vw;
 }
 
-.tarjeta__contenido {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: white;
+.card-title {
+    font-size: 1vw;
+}
+
+.card-text {
+    font-size: 1vw;
 }
 
 /*contacto*/
-.formulario {
-    height: 100%;
-    border: solid 2px black;
-    border-radius: 2%;
+.main_contacto {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 1%;
 }
 
-label {
-    font-family: monospace;
-    margin-left: 2px;
-}
-
-textarea {
-    width: 99.9%;
+form {
+    width: 70%;
+    font-size: 1rem;
 }
 
 /* PIE DE PAGINA */
 .pie {
     background-color: rgb(243, 103, 103);
     margin: 2px;
-    color: white;
     text-align: left;
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-content: center;
     justify-content: space-between;
+    color: black;
 }
-.pie p{
+
+.pie p {
     font-size: 1.5vw;
 }
-.pie ul{
+
+.pie ul {
     margin-right: 10px;
 }
+
 .pie ul li {
     display: inline-block;
-    
-}
-.pie ul li a{
-    font-size: 2vw;
-
 }
 
-@media screen and (max-width: 785px) {
-    body{
-        background-color: brown;
+.pie ul li a i {
+    font-size: 1.5vw;
+    color: black;
+}
+
+@media screen and (max-width: 986px) {
+    #grilla {
+        display: grid;
+        grid-template-areas:
+            "header"
+            "main"
+            "footer";
+        grid-template-rows: 25vh auto 5vh;
+        grid-template-columns: auto;
     }
+
+    /* ENACEBZADO */
     header {
+        grid-area: header;
         flex-direction: column;
         width: 100%;
     }
+
     .logo {
-        width: 100px;
-        height: 100px;
+        width: 12vh;
+        margin: 0%;
     }
+
     .main {
         flex-direction: column;
         width: 100%;
     }
-    main .nosotros p{
-        font-size: 2vw;
-    } 
+
+    main .nosotros p {
+        font-size: 2.5vw;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .dropdown {
+        display: block;
+        margin-bottom: 1%;
+        padding: 1%;
+        margin: 1%;
+    }
+
+    /* CONTENIDO PRINCIPAL */
+    main {
+        grid-area: main;
+    }
+
+
+    /* PIE DE PAGINA */
+    footer {
+        grid-area: footer;
+    }
+
+    /* GALERIA */
 }
