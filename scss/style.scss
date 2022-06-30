@@ -1,4 +1,13 @@
 @import "colors";
+//migracion de el archivo css de bootstrap para la funcion extend ----
+@import "bootstrap";
+
+@mixin FlexEnFilayCentrado {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
 * {
     padding: 0px;
     margin: 0px;
@@ -36,9 +45,7 @@ footer {
 header {
     margin: 2px;
     background-color: $color-black;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+    @include FlexEnFilayCentrado;
     justify-content: space-between;
 }
 
@@ -48,11 +55,24 @@ header {
     margin-left: 3%;
 }
 //----SASS-----------------------------
+//MENU
 .menu {
     background-color: $color-black;
     color: $color-white;
     text-align: center;
     margin-right: 5%;
+    .active{
+        background-color: darkred;
+    }
+    &__boton{
+        //uso de extend -----------------------------------------------------
+        @extend .btn;
+        background-color: white;
+        &:hover{
+            background-color: red;
+            border-color: black;
+        }
+    }
     ul{
         li {
             display: inline-block;
@@ -60,9 +80,10 @@ header {
                 transform: scale(1.1);
             }
             a {
-                color: $color-white;
+                color: $color-black;
                 padding: 6px;
                 font-size: 1rem;
+                text-decoration: none;
             }
         }
     }
@@ -70,9 +91,7 @@ header {
 
 /* CONTENIDO PRINCIPAL */
 .main {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+    @include FlexEnFilayCentrado;
     width: 100%;
     height: 100%;
 }
@@ -85,12 +104,12 @@ header {
 article {
     width: 50%;
     padding: 2%;
+    .imagen_principal {
+        width: 100%;
+        border-radius: 5%;
+    }
 }
 
-article .imagen_principal {
-    width: 100%;
-    border-radius: 5%;
-}
 //------SASS---------------------
 .nosotros {
     width: 50%;
@@ -110,7 +129,7 @@ article .imagen_principal {
     flex-wrap: wrap;
     justify-content: center;
     img {
-        max-width: 200px;
+        max-width: 300px;
         padding: 1%;
     }
 }
@@ -132,12 +151,10 @@ article .imagen_principal {
 
 /*talleres amigos*/
 .main_talleres {
-    display: flex;
-    flex-direction: row;
+    @include FlexEnFilayCentrado;
     flex-wrap: nowrap;
     width: 100%;
     height: 100%;
-    align-items: center;
     justify-content: center;
 }
 
