@@ -8878,7 +8878,7 @@ body {
 #grilla {
   display: grid;
   grid-template-areas: "header header" "main main" "footer footer";
-  grid-template-rows: 20vh 75vh 5vh;
+  grid-template-rows: 20vh minmax(75vh, auto) 5vh;
   grid-template-columns: 50% 50%; }
 
 header {
@@ -8952,44 +8952,50 @@ article {
     text-align: center;
     border: solid 2px black;
     font-size: 1.5vw;
-    height: 100%; }
+    height: 100%;
+    margin: 2%;
+    border-radius: 5%; }
 
 /* GALERIA*/
 .galeria {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  align-items: center;
   justify-content: center; }
   .galeria img {
     max-width: 300px;
-    padding: 1%; }
+    height: fit-content;
+    padding: 1%;
+    border-radius: 8%; }
 
 /*novedades*/
 .noticia {
   display: flex;
   flex-direction: row;
   border: solid 2px black;
-  margin-top: 3px; }
+  margin-top: 3px;
+  align-items: center; }
   .noticia p {
-    font-size: 1.5vw; }
+    font-size: 1.5vw;
+    margin-left: 1%; }
   .noticia img {
     width: 10vw;
-    height: 10vw; }
+    height: 10vw;
+    margin: 0.5%; }
 
 /*talleres amigos*/
 .main_talleres {
   display: flex;
   flex-direction: row;
   align-items: center;
-  flex-wrap: nowrap;
   width: 100%;
-  height: 100%;
   justify-content: center; }
 
 .card {
   margin: 1%;
   text-align: center;
-  width: 20vw; }
+  width: 200px; }
 
 .card-title {
   font-size: 1vw; }
@@ -9010,23 +9016,26 @@ form {
 
 /* PIE DE PAGINA */
 .pie {
-  background-color: red;
+  background-color: darkred;
   margin: 2px;
   text-align: left;
   display: flex;
   flex-direction: row;
-  align-content: center;
+  align-items: center;
   justify-content: space-between;
-  color: black; }
+  color: white; }
   .pie p {
-    font-size: 1.5vw; }
+    font-size: 1.3vw;
+    margin-left: 1%;
+    margin-top: 1%; }
   .pie ul {
-    margin-right: 10px; }
+    margin-right: 10px;
+    margin-top: 1%; }
     .pie ul li {
       display: inline-block; }
       .pie ul li a i {
         font-size: 1.5vw;
-        color: black; }
+        color: white; }
 
 @media screen and (max-width: 986px) {
   #grilla {
@@ -9042,11 +9051,6 @@ form {
   .logo {
     width: 12vh;
     margin: 0%; }
-  .main {
-    flex-direction: column;
-    width: 100%; }
-  main .nosotros p {
-    font-size: 2.5vw; }
   .menu {
     display: none; }
   .dropdown {
@@ -9057,7 +9061,11 @@ form {
   /* CONTENIDO PRINCIPAL */
   main {
     grid-area: main; }
+  .main {
+    flex-direction: column;
+    width: 100%; }
+  main .nosotros p {
+    font-size: 2.5vw; }
   /* PIE DE PAGINA */
   footer {
-    grid-area: footer; }
-  /* GALERIA */ }
+    grid-area: footer; } }

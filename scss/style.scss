@@ -25,7 +25,7 @@ body {
         "header header"
         "main main"
         "footer footer";
-    grid-template-rows: 20vh 75vh 5vh;
+    grid-template-rows: 20vh minmax(75vh,auto) 5vh;
     grid-template-columns: 50% 50%;
 }
 
@@ -119,6 +119,8 @@ article {
         border: solid 2px $color-black;
         font-size: 1.5vw;
         height: 100%;
+        margin: 2%;
+        border-radius: 5%;
     }
 }
 
@@ -127,10 +129,13 @@ article {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    align-items: center;
     justify-content: center;
     img {
         max-width: 300px;
+        height: fit-content;
         padding: 1%;
+        border-radius: 8%;
     }
 }
 
@@ -140,28 +145,30 @@ article {
     flex-direction: row;
     border: solid 2px $color-black;
     margin-top: 3px;
+    align-items: center;
     p {
         font-size: 1.5vw;
+        margin-left: 1%;
     }
     img {
         width: 10vw;
         height: 10vw;
+        margin: 0.5%
     }
 }
 
 /*talleres amigos*/
 .main_talleres {
     @include FlexEnFilayCentrado;
-    flex-wrap: nowrap;
     width: 100%;
-    height: 100%;
+    //height: auto;
     justify-content: center;
 }
 
 .card {
     margin: 1%;
     text-align: center;
-    width: 20vw;
+    width: 200px;
 }
 
 .card-title {
@@ -188,25 +195,28 @@ form {
 /* PIE DE PAGINA */
 //----SASS--------------------
 .pie {
-    background-color: $color-red;
+    background-color: $color-darkred;
     margin: 2px;
     text-align: left;
     display: flex;
     flex-direction: row;
-    align-content: center;
+    align-items: center;
     justify-content: space-between;
-    color: $color-black;
+    color: $color-white;
     p {
-        font-size: 1.5vw;
+        font-size: 1.3vw;
+        margin-left: 1%;
+        margin-top: 1%;
     }
     ul {
         margin-right: 10px;
+        margin-top: 1%;
         li {
             display: inline-block;
             a{
                 i {
                     font-size: 1.5vw;
-                    color: $color-black;
+                    color: $color-white;
                 }
             }
         }
@@ -236,15 +246,6 @@ form {
         margin: 0%;
     }
 
-    .main {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    main .nosotros p {
-        font-size: 2.5vw;
-    }
-
     .menu {
         display: none;
     }
@@ -260,12 +261,17 @@ form {
     main {
         grid-area: main;
     }
+    .main {
+        flex-direction: column;
+        width: 100%;
+    }
 
+    main .nosotros p {
+        font-size: 2.5vw;
+    }
 
     /* PIE DE PAGINA */
     footer {
         grid-area: footer;
     }
-
-    /* GALERIA */
 }
